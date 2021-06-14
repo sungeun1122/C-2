@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{62E6C0CC-4708-4EB9-893D-AE9A3720FEB2}</ProjectGuid>
-    <RootNamespace>My02_PreDS</RootNamespace>
+    <ProjectGuid>{36CAD526-C751-4F27-98B4-BC7E0FD8CB60}</ProjectGuid>
+    <RootNamespace>My03_ADT</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,21 +110,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Struct.c">
+    <ClInclude Include="Wallet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IterateMain.c">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="FunctionPtr.c">
+    <ClCompile Include="wallet.c">
       <SubType>
       </SubType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Time.c">
-      <SubType>
-      </SubType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Memory.c">
+    <ClCompile Include="WalletMain.c">
       <SubType>
       </SubType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>

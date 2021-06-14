@@ -31,6 +31,18 @@ void fnDiv(int a, int b)
 	printf("나눗셈: %d / %d = %d\n", a, b, a / b);
 }
 
+void doAction(int a, int b, void(*fnOp)(int, int))
+{
+	(*fnOp)(a, b);
+}
+
+typedef void fnAction(int, int);  // 함수포인터 타입 정의
+
+void doAction2(int a, int b, fnAction *fnOp)
+{
+	(*fnOp)(a, b);
+}
+
 
 int main()
 {
@@ -104,6 +116,16 @@ int main()
 
 	}
 
+	// 함수 포인터도 포인터다!  
+	// 매개변수로 넘겨줄수도, 리턴값으로 받을수도
+	// 배열 원소가 될수도 있다!!
+	printf("\n");
+	{
+		doAction(333, 444, fnPlus);
+		doAction(333, 444, fnMinus);
+		doAction2(333, 444, fnMul);
+		doAction2(333, 444, fnDiv);
+	}
 
 
 	printf("\n아무키나 입력하면 프로그램 종료됩니다\n");

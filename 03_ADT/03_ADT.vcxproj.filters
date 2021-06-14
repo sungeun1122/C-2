@@ -15,16 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Memory.c">
+    <ClInclude Include="Wallet.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WalletMain.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Time.c">
+    <ClCompile Include="wallet.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="FunctionPtr.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Struct.c">
+    <ClCompile Include="IterateMain.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
