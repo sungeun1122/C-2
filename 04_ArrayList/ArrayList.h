@@ -1,11 +1,22 @@
 #ifndef __ARRAY_LIST_H__
 #define __ARRAY_LIST_H__
 
+/*
+*	ArrayList 의 ADT
+*
+*	ArrayList 의
+*	장점 : n번째 조회 빠르다
+*	단점 : 삭제, 삽입 느리다.
+*
+*	장점 : 용량
+*/
+
 #define SUCCESS 1
 #define FAIL 0
 
 /* ArrayList 의 데이터 */
-#define LIST_LEN 4
+//#define LIST_LEN 4
+#define LIST_LEN 30000   // 프로파일링
 
 typedef int Data;
 

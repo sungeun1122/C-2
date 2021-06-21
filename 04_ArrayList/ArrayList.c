@@ -35,7 +35,7 @@ int list_add(List *pList, Data data)
 
 	pList->arr[pList->numData] = data;   // 데이터 추가
 
-	printf("[%d] 번째 데이터 %d 추가\n", pList->numData, data);
+	//printf("[%d] 번째 데이터 %d 추가\n", pList->numData, data);
 	(pList->numData)++;  // 데이터 개수 증가
 	return SUCCESS;
 }
@@ -57,7 +57,7 @@ int list_remove(List *pList, int n)
 
 	pList->numData--;  // 리스트 size 감소
 
-	printf("%d 번째 데이터 삭제\n", n);
+	//printf("%d 번째 데이터 삭제\n", n);
 
 	return SUCCESS;
 }
@@ -145,7 +145,7 @@ int list_insert(List *pList, int n, Data data)
 	// 데이터 개수 증가
 	pList->numData++;
 
-	printf("[%d] 번재 데이터 %d 삽입 성공\n", n, data);
+	//printf("[%d] 번재 데이터 %d 삽입 성공\n", n, data);
 
 	return SUCCESS;
 }
