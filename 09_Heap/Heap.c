@@ -111,17 +111,17 @@ HData heap_delete(Heap *ph)
 	// 일단, 자식노드중 우선순위 높은거 선택 , getHighPriority 사용
 	// 만약 자식이 하나도 없다면 0이 리턴되어 while 문 종료
 	// 아래 while 문은 결국 idx 값을 결정하기 위함.
-	while (/* TODO */)
+	while (childIdx = getHighPriority(ph, idx))
 	{
 		// 선택된 자식과, 아래에서 올라온 마지막 노드와 우선순위 비교.
 		// 만약 자식의 우선순위가 같거나 낮다면 while 종료
-		// TODO
+		if (ph->comp(lastElem, ph->heapArr[childIdx]) >= 0) break;
 
 		// 자식의 우선순위가 더 크다면,  그 자식이 부모의 자리로 교체
-		// TODO
+		ph->heapArr[idx] = ph->heapArr[childIdx];
 
 		// 다음 비교를 위해 마지막 노드 idx를 좀전의 자식위치로 내리기
-		// TODO
+		idx = childIdx;
 	}
 
 	// while이 다 끝난후 idx 위치가 마지막 노드(laseElem)이 위치할 곳이다.

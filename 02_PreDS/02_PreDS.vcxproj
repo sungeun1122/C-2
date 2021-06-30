@@ -110,9 +110,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="TimeComplexity.c">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Struct.c">
       <SubType>
       </SubType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="FunctionPtr.c">
       <SubType>

@@ -11,7 +11,7 @@
 int DataPriorityComp(HData ch1, HData ch2)
 {
 	//return ch2 - ch1;  // min-heap
-	return ch1 - ch2;  // max-head
+	return ch1 - ch2;  // max-heap
 }
 
 
@@ -35,8 +35,27 @@ int main()
 	//   (9)    (20)
 
 	printf("%d \n", heap_delete(&heap));  // MAX-HEAP => 30,  MIN-HEAP => 9
-	printf("%d \n", heap_delete(&heap));  //           20
-	printf("%d \n", heap_delete(&heap));  //           10 
+	printf("%d \n", heap_delete(&heap));  //           20                20
+	printf("%d \n", heap_delete(&heap));  //           9                 30
+
+	//--------------------------------------------------
+	printf("\n");
+	heap_insert(&heap, 15);
+	heap_insert(&heap, 4);
+	heap_insert(&heap, 8);
+	heap_insert(&heap, 12);
+	heap_insert(&heap, 13);
+	heap_insert(&heap, 7);
+	heap_insert(&heap, 1);
+	heap_insert(&heap, 9);
+	heap_insert(&heap, 3);
+	heap_insert(&heap, 2);
+	heap_insert(&heap, 10);
+	heap_insert(&heap, 1);
+
+	while (!heap_is_empty(&heap))
+		printf("%d ", heap_delete(&heap));
+	printf("\n");
 
 
 	printf("\n아무키나 입력하면 프로그램 종료됩니다\n");
