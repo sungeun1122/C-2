@@ -7,10 +7,10 @@
 #pragma warning(disable:4477)  // unsigned <--> signed 관련 warning
 
 
-#define DATA_SIZE 20000
+#define DATA_SIZE 80000
 
 #include "Sort.h"
-
+#include "Heap.h"
 
 
 int main()
@@ -96,23 +96,44 @@ int main()
 
 
 	//--------------------------------------------------------
-	printf("\nWORST vs. BEST case\n");
+	//printf("\nWORST vs. BEST case\n");
+	//{
+	//	int srcArr[DATA_SIZE];
+	//	//genRandom(srcArr, DATA_SIZE);  // 1. 랜덤
+	//	//genIncSorted(srcArr, DATA_SIZE);  // 2. 오름차순 이미 정렬될 배열
+	//	genDecSorted(srcArr, DATA_SIZE);  // 3. 내림차순, 역정렬된 배열
+	//	int workArr[DATA_SIZE];
+
+	//	memcpy(workArr, srcArr, sizeof(int) * DATA_SIZE);
+	//	chkTimeLap(BubbleSort, workArr, DATA_SIZE, "버블역정렬");
+
+	//	memcpy(workArr, srcArr, sizeof(int) * DATA_SIZE);
+	//	chkTimeLap(SelectionSort, workArr, DATA_SIZE, "선택역정렬");
+
+	//	memcpy(workArr, srcArr, sizeof(int) * DATA_SIZE);
+	//	chkTimeLap(InsertionSort, workArr, DATA_SIZE, "삽입역정렬");
+	//	
+	//}
+
+	//------------------------------------------------------
+	printf("\nHeapSort\n");
 	{
 		int srcArr[DATA_SIZE];
-		//genRandom(srcArr, DATA_SIZE);  // 1. 랜덤
-		//genIncSorted(srcArr, DATA_SIZE);  // 2. 오름차순 이미 정렬될 배열
-		genDecSorted(srcArr, DATA_SIZE);  // 3. 내림차순, 역정렬된 배열
+		genRandom(srcArr, DATA_SIZE);
+
 		int workArr[DATA_SIZE];
-
 		memcpy(workArr, srcArr, sizeof(int) * DATA_SIZE);
-		chkTimeLap(BubbleSort, workArr, DATA_SIZE, "버블역정렬");
 
-		memcpy(workArr, srcArr, sizeof(int) * DATA_SIZE);
-		chkTimeLap(SelectionSort, workArr, DATA_SIZE, "선택역정렬");
+		Heap hp;
+		heap_init(&hp, DATA_SIZE);
 
-		memcpy(workArr, srcArr, sizeof(int) * DATA_SIZE);
-		chkTimeLap(InsertionSort, workArr, DATA_SIZE, "삽입역정렬");
-		
+		//printArr(workArr, DATA_SIZE); // 정렬전
+
+		chkTimeLap(HeapSort, workArr, DATA_SIZE, "힙정렬");
+
+		//printArr(workArr, DATA_SIZE); // 정렬후
+
+		heap_destroy(&hp);
 	}
 
 
@@ -147,5 +168,10 @@ WORST vs. BEST case
 버블역정렬 (size: 20000) 수행결과: 607 ms
 선택역정렬 (size: 20000) 수행결과: 346 ms
 삽입역정렬 (size: 20000) 수행결과: 396 ms
+
+HeapSort
+힙정렬 (size: 20000) 수행결과: 6 ms
+힙정렬 (size: 40000) 수행결과: 13 ms
+힙정렬 (size: 80000) 수행결과: 26 ms
 
 */

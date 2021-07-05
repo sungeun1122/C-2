@@ -38,4 +38,9 @@ void heap_insert(Heap *ph, HData data);
 // 힙에서 삭제 (DELETE) 하여 리턴, 삭제는 root에서 발생
 HData heap_delete(Heap *ph);
 
+// 힙정렬
+Heap *g_hp;
+void HeapSort(int arr[], int n);
+
+
 #endif

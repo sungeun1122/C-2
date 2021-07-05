@@ -111,9 +111,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Heap.h" />
+    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="QuickSort.c">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Heap.c" />
     <ClCompile Include="Sort.c">
       <SubType>

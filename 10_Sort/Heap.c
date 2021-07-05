@@ -52,8 +52,7 @@ void heap_init(Heap *ph, int len)
 	ph->numData = 0;   // 데이터(노드)개수
 	ph->heapArr = (int*)malloc(sizeof(int) * (len + 1));  // 1-based 배열이니까! +1개 배열 필요
 
-	// TODO
-
+	g_hp = ph;   // 힙정렬에 필요
 }
 
 void heap_destroy(Heap *ph)
@@ -132,7 +131,15 @@ HData heap_delete(Heap *ph)
 	return rootData;  // 최초에 저장해 놓았던 root data 리턴
 }
 
+void HeapSort(int arr[], int n)
+{
+	int i;
+	for (i = 0; i < n; i++)
+		heap_insert(g_hp, arr[i]);
 
+	for (i = 0; i < n; i++)
+		arr[i] = heap_delete(g_hp);
+}
 
 
 
