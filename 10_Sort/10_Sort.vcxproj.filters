@@ -18,12 +18,18 @@
     <ClInclude Include="Sort.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SortMain.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Sort.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
